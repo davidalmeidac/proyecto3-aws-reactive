@@ -1,0 +1,26 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: aws-reactive-api
+
+aws:
+  region: us-east-1
+  dynamodb:
+    endpoint: http://localhost:4566  # LocalStack endpoint
+    table:
+      products: products
+  lambda:
+    function:
+      name: process-order
+  stepfunctions:
+    stateMachine:
+      arn: arn:aws:states:us-east-1:123456789012:stateMachine:OrderProcessing
+
+# Para desarrollo local con LocalStack
+# aws:
+#   region: us-east-1
+#   dynamodb:
+#     endpoint: http://localhost:4566
+
